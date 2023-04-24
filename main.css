@@ -1,0 +1,267 @@
+html{
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family:'Poppins';
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*navbar*/
+nav{
+    margin: 4em;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 4.1em;
+    margin: 0;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul li a.active:before{
+    position: absolute;
+    content: "";
+    width: 35%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -2px;
+}
+
+nav ul li a:before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid rgba(105, 96, 96, 0.852);
+    bottom: -2px;
+    transition: width .3s;
+}
+/*HERO SECTION*/
+
+main{
+    display: flex;
+    gap:8em;
+    margin-top: 8em;
+}
+
+.left-col{
+    width: 45%;
+}
+
+.right-col{
+    flex:1;
+}
+
+h1{
+    font-size: 5.2rem;
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    margin: 0;
+}
+
+.subhead{
+    font-size: 1.8rem;
+    font-weight: lighter;
+    width: 90%;
+    margin: 0;
+}
+
+.cta-bts{
+    margin:5em 0;
+}
+.cta-bts, .secondary-btn{
+    display: flex;
+    gap:2em;
+}
+
+.primary-btn{
+    background-color: #E6CE92;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: black;
+    text-decoration: none;
+    border-radius: 1.4em;
+    padding: 1em 2em;
+}
+
+.secondary-btn{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 1em 0;
+    transition: text-decoration .3s;
+}
+
+.secondary-btn svg{
+    width: 20px;
+    transition: transform .3s;
+}
+
+.news{
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+}
+
+.news:before{
+    position: absolute;
+    content: "";
+    background:url('../Fauxica/images/confetti.svg');
+    height: 100px;
+    width: 100px;
+    top: -20px;
+    left: 20px;
+}
+
+.employees{
+    font-size: 3.3rem;
+    margin: 0;
+    font-weight: 200;
+    line-height: 100%;
+}
+
+p.details{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.right-col{
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2,auto);
+    grid-template-areas: 
+        "sonu ."
+        "sonu .";
+}
+
+.card{
+    border-radius: .8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 150%;
+    transition: background-size .3s;
+}
+
+.card1{
+    grid-area: sonu;
+    background-image: url('../Fauxica/images/clothing1.jpg');
+}
+
+.card2{
+    background-image: url('../Fauxica/images/clothing2.jpg');
+}
+
+.card3{
+    background-image: url('../Fauxica/images/clothing3.jpg');
+}
+
+.card-details{
+    display: flex;
+    padding: 2em;
+    width: 100%;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: .5em;
+    align-items: center;
+    transition: transform 0.5s;
+}
+
+.card-details a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.card-details p{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.product-price{
+    font-size: 1.8rem;
+}
+
+/*Microinteractions*/
+
+nav ul li a:hover:before{
+    width: 35%;
+}
+
+.primary-btn:hover{
+    background-color: #F1E4C1;
+}
+
+.secondary-btn:hover svg{
+    transform: translateX(10px);
+}
+
+.secondary-btn:hover{
+    text-decoration: underline;
+}
+
+.card:hover{
+    background-size: 180%;
+}
+
+.card:hover .card-details{
+    transform: translateY(-20px);
+}
+
+
+/*Intro animation*/
+.overlay{
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    z-index: 999;
+    animation: reveal 1s ease forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal {
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}
+
+main{
+    animation: growin 2s cubic-bezier(0.075, 0.82, 0.165, 1)forwards;
+    transform: scale(.4);
+}
+
+@keyframes growin {
+    to{
+        transform: scale(1);
+    }
+}
